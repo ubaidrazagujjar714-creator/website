@@ -1,0 +1,2441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To My World's Best Teacher | Saba Akram</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&family=Montserrat:wght@400;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <style>
+        /* ====== ULTIMATE CSS VARIABLES ====== */
+        :root {
+            --primary: #2C3E50;
+            --secondary: #3498DB;
+            --accent: #E74C3C;
+            --gold: #FFD700;
+            --light: #F8F9FA;
+            --dark: #1A252F;
+            --gradient-main: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-gold: linear-gradient(135deg, #FFD700, #FFED4E, #FFD700);
+            --gradient-blue: linear-gradient(135deg, #3498DB, #2C3E50);
+            --gradient-emotional: linear-gradient(135deg, #FF6B6B, #4ECDC4, #45B7D1);
+            --shadow-3d: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            --shadow-soft: 0 10px 40px rgba(0,0,0,0.08);
+            --shadow-glow: 0 0 40px rgba(255, 215, 0, 0.3);
+            --transition-smooth: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-bounce: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+        
+        /* ====== SMOOTH SCROLL & RESET ====== */
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--light);
+            color: var(--dark);
+            line-height: 1.8;
+            overflow-x: hidden;
+            font-weight: 400;
+            background: linear-gradient(180deg, 
+                #FFFFFF 0%, 
+                #F8F9FA 20%, 
+                #F1F8FF 40%, 
+                #E3F2FD 60%, 
+                #FFF8E1 80%, 
+                #FFF3E0 100%);
+            background-attachment: fixed;
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+        
+        @keyframes gradientBG {
+            0% { background-position: 0% 50% }
+            50% { background-position: 100% 50% }
+            100% { background-position: 0% 50% }
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 800;
+            line-height: 1.2;
+            letter-spacing: -0.5px;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .section {
+            padding: 140px 0;
+            position: relative;
+        }
+        
+        /* ====== EMOTIONAL PRELOADER ====== */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-emotional);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.8s ease-out;
+        }
+        
+        .loader-content {
+            text-align: center;
+            color: white;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        .loader-heart {
+            font-size: 6rem;
+            margin-bottom: 30px;
+            animation: heartbeat 1.5s infinite;
+            color: rgba(255, 255, 255, 0.9);
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+        }
+        
+        @keyframes heartbeat {
+            0%, 100% { 
+                transform: scale(1); 
+                filter: drop-shadow(0 0 10px rgba(255,255,255,0.3));
+            }
+            50% { 
+                transform: scale(1.2); 
+                filter: drop-shadow(0 0 30px rgba(255,255,255,0.8));
+            }
+        }
+        
+        .loader-text {
+            font-size: 2.5rem;
+            font-family: 'Dancing Script', cursive;
+            margin-top: 20px;
+            opacity: 0.9;
+        }
+        
+        .progress-ring {
+            width: 120px;
+            height: 120px;
+            margin: 40px auto;
+        }
+        
+        .progress-ring__circle {
+            stroke: white;
+            stroke-width: 4;
+            stroke-linecap: round;
+            fill: transparent;
+            transform: rotate(-90deg);
+            transform-origin: 50% 50%;
+            stroke-dasharray: 314;
+            stroke-dashoffset: 314;
+            animation: progress 2s ease-out forwards;
+        }
+        
+        @keyframes progress {
+            to { stroke-dashoffset: 0; }
+        }
+        
+        /* ====== GLASS NAVIGATION ====== */
+        .navbar {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 25px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: var(--transition-smooth);
+        }
+        
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(30px);
+            padding: 18px 0;
+            box-shadow: var(--shadow-soft);
+            border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+        }
+        
+        .logo-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-gold);
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark);
+            font-size: 1.8rem;
+            box-shadow: var(--shadow-glow);
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+        
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: var(--gradient-gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+        
+        .nav-menu a {
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: var(--transition-smooth);
+            position: relative;
+            padding: 10px 0;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+        
+        .nav-menu a::before,
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            width: 0;
+            height: 3px;
+            background: var(--gradient-gold);
+            transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .nav-menu a::before {
+            left: 50%;
+        }
+        
+        .nav-menu a::after {
+            right: 50%;
+        }
+        
+        .nav-menu a:hover::before,
+        .nav-menu a:hover::after,
+        .nav-menu a.active::before,
+        .nav-menu a.active::after {
+            width: 50%;
+        }
+        
+        .nav-menu a:hover {
+            color: var(--accent);
+            transform: translateY(-3px);
+        }
+        
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 1001;
+        }
+        
+        .hamburger span {
+            width: 30px;
+            height: 3px;
+            background: var(--primary);
+            border-radius: 3px;
+            transition: var(--transition-smooth);
+        }
+        
+        /* ====== EMOTIONAL HERO SECTION ====== */
+        .hero {
+            min-height: 100vh;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(52, 152, 219, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(231, 76, 60, 0.1) 0%, transparent 50%),
+                linear-gradient(135deg, rgba(44, 62, 80, 0.9) 0%, rgba(52, 152, 219, 0.9) 100%),
+                url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover, cover, cover, cover, cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-blend-mode: overlay, overlay, overlay, multiply, normal;
+            display: flex;
+            align-items: center;
+            color: white;
+            margin-top: 100px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                repeating-linear-gradient(0deg, 
+                    transparent, 
+                    transparent 2px, 
+                    rgba(255, 255, 255, 0.05) 2px, 
+                    rgba(255, 255, 255, 0.05) 4px),
+                repeating-linear-gradient(90deg, 
+                    transparent, 
+                    transparent 2px, 
+                    rgba(255, 255, 255, 0.03) 2px, 
+                    rgba(255, 255, 255, 0.03) 4px);
+            pointer-events: none;
+        }
+        
+        .hero-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 80px 40px;
+            position: relative;
+            z-index: 2;
+            animation: heroEntrance 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        
+        @keyframes heroEntrance {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background: var(--gradient-gold);
+            color: var(--dark);
+            padding: 15px 35px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow-glow);
+            animation: badgePulse 3s infinite;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        @keyframes badgePulse {
+            0%, 100% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.3); }
+            50% { box-shadow: 0 0 40px rgba(255, 215, 0, 0.6); }
+        }
+        
+        .hero-title {
+            font-size: 5rem;
+            margin-bottom: 30px;
+            font-weight: 900;
+            line-height: 1.1;
+            text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(135deg, #FFD700 0%, #FFFFFF 50%, #FFD700 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            background-size: 200% 200%;
+            animation: shimmer 3s ease-in-out infinite;
+        }
+        
+        @keyframes shimmer {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .hero-subtitle {
+            font-size: 2rem;
+            margin-bottom: 50px;
+            opacity: 0.9;
+            font-weight: 400;
+            font-family: 'Dancing Script', cursive;
+            color: rgba(255, 255, 255, 0.95);
+        }
+        
+        .floating-hearts {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .heart-float {
+            position: absolute;
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 2rem;
+            animation: floatUp 15s linear infinite;
+        }
+        
+        @keyframes floatUp {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.8;
+            }
+            90% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        .student-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            padding: 60px;
+            border-radius: 40px;
+            margin: 60px 0;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 
+                0 20px 60px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            transform-style: preserve-3d;
+            perspective: 1000px;
+            animation: cardFloat 8s ease-in-out infinite;
+        }
+        
+        @keyframes cardFloat {
+            0%, 100% { transform: translateY(0) rotateX(0) rotateY(0); }
+            25% { transform: translateY(-20px) rotateX(2deg) rotateY(1deg); }
+            75% { transform: translateY(10px) rotateX(-1deg) rotateY(-2deg); }
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .info-item {
+            text-align: center;
+            padding: 40px 30px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 25px;
+            transition: var(--transition-smooth);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .info-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(255, 255, 255, 0.2), 
+                transparent);
+            transition: left 0.7s;
+        }
+        
+        .info-item:hover::before {
+            left: 100%;
+        }
+        
+        .info-item:hover {
+            transform: translateY(-15px) scale(1.05);
+            background: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            border-color: rgba(255, 215, 0, 0.5);
+        }
+        
+        .info-item i {
+            font-size: 3.5rem;
+            color: var(--gold);
+            margin-bottom: 25px;
+            filter: drop-shadow(0 5px 15px rgba(255, 215, 0, 0.3));
+        }
+        
+        .info-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--gold);
+            font-weight: 700;
+        }
+        
+        .hero-btns {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            margin-top: 70px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 22px 50px;
+            border-radius: 50px;
+            border: none;
+            font-size: 1.3rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            transition: var(--transition-bounce);
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(255, 255, 255, 0.4), 
+                transparent);
+            transition: left 0.7s;
+        }
+        
+        .btn:hover::before {
+            left: 100%;
+        }
+        
+        .btn-primary {
+            background: var(--gradient-gold);
+            color: var(--dark);
+            box-shadow: 
+                0 15px 35px rgba(241, 196, 15, 0.4),
+                0 0 20px rgba(255, 215, 0, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 3px solid rgba(255, 255, 255, 0.7);
+            box-shadow: 
+                0 15px 35px rgba(255, 255, 255, 0.2),
+                inset 0 0 20px rgba(255, 255, 255, 0.1);
+        }
+        
+        .btn:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 
+                0 25px 50px rgba(0, 0, 0, 0.4),
+                0 0 40px rgba(255, 215, 0, 0.5);
+        }
+        
+        /* ====== TEACHER PORTRAIT ====== */
+        .teacher-section {
+            background: linear-gradient(135deg, 
+                #FFFFFF 0%, 
+                #F8F9FA 25%, 
+                #E3F2FD 50%, 
+                #FFF8E1 75%, 
+                #FFF3E0 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .teacher-section::before {
+            content: '❤️';
+            position: absolute;
+            top: 10%;
+            right: 10%;
+            font-size: 15rem;
+            opacity: 0.03;
+            animation: rotateSlow 60s linear infinite;
+        }
+        
+        @keyframes rotateSlow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 4rem;
+            margin-bottom: 100px;
+            color: var(--primary);
+            position: relative;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 5px;
+            background: var(--gradient-gold);
+            border-radius: 3px;
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.5rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto 80px;
+            font-weight: 400;
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.2rem;
+            color: var(--primary);
+            opacity: 0.8;
+        }
+        
+        .teacher-portrait {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .portrait-card {
+            background: white;
+            border-radius: 50px;
+            overflow: hidden;
+            box-shadow: var(--shadow-3d);
+            transform-style: preserve-3d;
+            perspective: 1500px;
+            position: relative;
+            transition: transform 0.6s ease;
+        }
+        
+        .portrait-card:hover {
+            transform: translateY(-20px) rotateX(5deg) rotateY(-5deg);
+        }
+        
+        .portrait-header {
+            background: var(--gradient-emotional);
+            padding: 100px 60px;
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .portrait-header::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, 
+                rgba(255,255,255,0.1) 1px, 
+                transparent 1px);
+            background-size: 60px 60px;
+            animation: moveGrid 20s linear infinite;
+            pointer-events: none;
+        }
+        
+        @keyframes moveGrid {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(-60px, -60px); }
+        }
+        
+        .teacher-name {
+            font-size: 4.5rem;
+            margin-bottom: 30px;
+            font-weight: 900;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .teacher-title {
+            font-size: 2.2rem;
+            opacity: 0.95;
+            margin-bottom: 40px;
+            font-weight: 400;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .teacher-quote {
+            font-size: 2.5rem;
+            font-family: 'Dancing Script', cursive;
+            color: rgba(255, 255, 255, 0.95);
+            position: relative;
+            z-index: 2;
+            padding: 0 40px;
+        }
+        
+        .portrait-body {
+            padding: 100px;
+            text-align: center;
+        }
+        
+        .teacher-description {
+            font-size: 1.6rem;
+            line-height: 1.9;
+            color: #555;
+            margin-bottom: 70px;
+            padding: 0 40px;
+            font-weight: 300;
+            position: relative;
+        }
+        
+        .teacher-description::first-letter {
+            font-size: 4rem;
+            color: var(--accent);
+            float: left;
+            line-height: 1;
+            margin-right: 15px;
+            font-weight: 900;
+        }
+        
+        .qualities-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 50px;
+            margin-top: 80px;
+        }
+        
+        .quality-item {
+            background: linear-gradient(135deg, 
+                rgba(255, 255, 255, 0.9) 0%,
+                rgba(248, 249, 250, 0.9) 100%);
+            padding: 50px 40px;
+            border-radius: 30px;
+            text-align: center;
+            transition: var(--transition-bounce);
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+        }
+        
+        .quality-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--gradient-gold);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.6s ease;
+        }
+        
+        .quality-item:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .quality-item:hover {
+            transform: translateY(-25px) scale(1.05);
+            box-shadow: 
+                0 30px 60px rgba(0, 0, 0, 0.15),
+                0 0 30px rgba(255, 215, 0, 0.2);
+            border-color: var(--gold);
+        }
+        
+        .quality-icon {
+            width: 100px;
+            height: 100px;
+            background: var(--gradient-emotional);
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 40px;
+            font-size: 3rem;
+            color: white;
+            box-shadow: 
+                0 15px 35px rgba(0, 0, 0, 0.2),
+                inset 0 -5px 15px rgba(0, 0, 0, 0.1);
+            transform: rotate(45deg);
+            transition: var(--transition-smooth);
+        }
+        
+        .quality-item:hover .quality-icon {
+            transform: rotate(0deg) scale(1.2);
+            box-shadow: 
+                0 20px 40px rgba(0, 0, 0, 0.3),
+                inset 0 -5px 15px rgba(0, 0, 0, 0.1),
+                0 0 30px rgba(255, 255, 255, 0.5);
+        }
+        
+        .quality-item h3 {
+            font-size: 2rem;
+            margin-bottom: 25px;
+            color: var(--primary);
+            font-weight: 800;
+        }
+        
+        /* ====== EMOTIONAL MEMORIES ====== */
+        .memories-section {
+            background: linear-gradient(135deg, 
+                rgba(102, 126, 234, 0.1) 0%, 
+                rgba(118, 75, 162, 0.1) 50%,
+                rgba(255, 107, 107, 0.1) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .memories-section::before {
+            content: '🎓';
+            position: absolute;
+            bottom: 10%;
+            left: 5%;
+            font-size: 20rem;
+            opacity: 0.03;
+            animation: floatSlow 20s ease-in-out infinite;
+        }
+        
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-50px) rotate(10deg); }
+        }
+        
+        .memories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 60px;
+            margin-top: 80px;
+        }
+        
+        .memory-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 40px;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            transition: var(--transition-bounce);
+            position: relative;
+            transform-style: preserve-3d;
+            perspective: 1000px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .memory-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, 
+                transparent 40%, 
+                rgba(255, 215, 0, 0.1) 50%, 
+                transparent 60%);
+            transform: translateX(-100%);
+        }
+        
+        .memory-card:hover::before {
+            animation: shine 1.5s;
+        }
+        
+        @keyframes shine {
+            to { transform: translateX(100%); }
+        }
+        
+        .memory-card:hover {
+            transform: 
+                translateY(-30px) 
+                rotateX(5deg) 
+                rotateY(-5deg) 
+                scale(1.05);
+            box-shadow: 
+                0 40px 80px rgba(0, 0, 0, 0.2),
+                0 0 40px rgba(255, 215, 0, 0.3);
+        }
+        
+        .memory-visual {
+            height: 300px;
+            background: var(--gradient-emotional);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 6rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .memory-visual::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                45deg, 
+                transparent 30%, 
+                rgba(255, 255, 255, 0.4) 50%, 
+                transparent 70%
+            );
+            transform: rotate(45deg);
+            animation: shineRotate 3s infinite;
+        }
+        
+        @keyframes shineRotate {
+            0% { transform: rotate(45deg) translateX(-100%); }
+            100% { transform: rotate(45deg) translateX(100%); }
+        }
+        
+        .memory-content {
+            padding: 50px;
+            text-align: center;
+        }
+        
+        .memory-content h3 {
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            color: var(--primary);
+            font-weight: 800;
+        }
+        
+        /* ====== HEARTFELT MESSAGE ====== */
+        .message-section {
+            background: linear-gradient(135deg, 
+                #FFF3E0 0%, 
+                #FFECB3 25%, 
+                #FFE082 50%, 
+                #FFD54F 75%, 
+                #FFCA28 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .message-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .message-card {
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 50px;
+            padding: 100px;
+            box-shadow: 
+                var(--shadow-3d),
+                inset 0 1px 0 rgba(255, 255, 255, 0.5);
+            position: relative;
+            overflow: hidden;
+            border: 2px solid rgba(255, 215, 0, 0.3);
+        }
+        
+        .message-card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: var(--gradient-gold);
+            z-index: -1;
+            filter: blur(20px);
+            opacity: 0.5;
+        }
+        
+        .message-header {
+            text-align: center;
+            margin-bottom: 80px;
+            position: relative;
+        }
+        
+        .message-header::after {
+            content: '';
+            position: absolute;
+            bottom: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 3px;
+            background: var(--gradient-emotional);
+            border-radius: 2px;
+        }
+        
+        .message-title {
+            font-size: 3.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-weight: 900;
+        }
+        
+        .message-subtitle {
+            font-size: 1.5rem;
+            color: #666;
+            font-family: 'Dancing Script', cursive;
+        }
+        
+        .message-body {
+            font-size: 1.4rem;
+            line-height: 2;
+            margin-bottom: 60px;
+            padding: 60px;
+            background: linear-gradient(135deg, 
+                rgba(248, 249, 250, 0.8) 0%,
+                rgba(241, 248, 255, 0.8) 100%);
+            border-radius: 30px;
+            border-left: 8px solid var(--accent);
+            box-shadow: 
+                inset 0 0 30px rgba(0, 0, 0, 0.05),
+                0 10px 30px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+        
+        .message-body::before {
+            content: '"';
+            position: absolute;
+            top: -40px;
+            left: 40px;
+            font-size: 10rem;
+            color: var(--accent);
+            opacity: 0.2;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .message-signature {
+            text-align: right;
+            padding-top: 60px;
+            border-top: 2px solid rgba(231, 76, 60, 0.3);
+            position: relative;
+        }
+        
+        .signature-name {
+            font-size: 4rem;
+            font-family: 'Dancing Script', cursive;
+            color: var(--primary);
+            margin-bottom: 10px;
+            background: var(--gradient-gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: inline-block;
+        }
+        
+        .signature-details {
+            font-size: 1.3rem;
+            color: #666;
+            font-style: italic;
+        }
+        
+        /* ====== INTERACTIVE QUIZ ====== */
+        .quiz-section {
+            background: linear-gradient(135deg, 
+                rgba(52, 152, 219, 0.1) 0%, 
+                rgba(41, 128, 185, 0.2) 50%,
+                rgba(44, 62, 80, 0.3) 100%);
+            position: relative;
+        }
+        
+        .quiz-container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(30px);
+            border-radius: 50px;
+            padding: 100px;
+            box-shadow: var(--shadow-3d);
+            max-width: 1000px;
+            margin: 0 auto;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .quiz-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, 
+                rgba(255, 215, 0, 0.1) 1px, 
+                transparent 1px);
+            background-size: 80px 80px;
+            animation: quizGrid 20s linear infinite;
+        }
+        
+        @keyframes quizGrid {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            100% { transform: translate(-80px, -80px) rotate(360deg); }
+        }
+        
+        .quiz-header {
+            text-align: center;
+            margin-bottom: 80px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .quiz-title {
+            font-size: 3.5rem;
+            color: var(--primary);
+            margin-bottom: 30px;
+            font-weight: 900;
+        }
+        
+        .quiz-question {
+            font-size: 2rem;
+            color: var(--dark);
+            margin-bottom: 60px;
+            text-align: center;
+            line-height: 1.6;
+            position: relative;
+            z-index: 2;
+            font-weight: 600;
+        }
+        
+        .quiz-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-bottom: 80px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .quiz-option {
+            background: linear-gradient(135deg, 
+                rgba(255, 255, 255, 0.9) 0%,
+                rgba(248, 249, 250, 0.9) 100%);
+            padding: 40px 30px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: var(--transition-bounce);
+            text-align: center;
+            font-size: 1.4rem;
+            border: 3px solid transparent;
+            box-shadow: var(--shadow-soft);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .quiz-option::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-gold);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1;
+        }
+        
+        .quiz-option:hover {
+            transform: translateY(-20px) scale(1.05);
+            border-color: var(--gold);
+            box-shadow: 
+                0 30px 60px rgba(0, 0, 0, 0.15),
+                0 0 30px rgba(255, 215, 0, 0.2);
+        }
+        
+        .quiz-option.selected {
+            background: var(--gradient-emotional);
+            color: white;
+            transform: translateY(-20px) scale(1.05);
+            border-color: transparent;
+            box-shadow: 
+                0 30px 60px rgba(0, 0, 0, 0.2),
+                0 0 40px rgba(255, 107, 107, 0.4);
+        }
+        
+        .quiz-option.selected::before {
+            opacity: 1;
+        }
+        
+        .quiz-result {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-top: 60px;
+            padding: 60px;
+            border-radius: 40px;
+            background: var(--gradient-emotional);
+            color: white;
+            display: none;
+            position: relative;
+            z-index: 2;
+            box-shadow: 
+                0 20px 60px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            animation: resultPulse 2s infinite;
+        }
+        
+        @keyframes resultPulse {
+            0%, 100% { box-shadow: 
+                0 20px 60px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            }
+            50% { box-shadow: 
+                0 20px 80px rgba(0, 0, 0, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.5),
+                0 0 50px rgba(255, 255, 255, 0.3);
+            }
+        }
+        
+        .quiz-result.show {
+            display: block;
+            animation: 
+                resultEntrance 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards,
+                resultPulse 2s infinite 0.8s;
+        }
+        
+        @keyframes resultEntrance {
+            0% { 
+                transform: scale(0.3) rotate(-30deg); 
+                opacity: 0; 
+            }
+            100% { 
+                transform: scale(1) rotate(0); 
+                opacity: 1; 
+            }
+        }
+        
+        /* ====== EMOTIONAL FOOTER ====== */
+        .footer {
+            background: linear-gradient(135deg, 
+                var(--dark) 0%, 
+                #0F1419 30%,
+                #1A252F 70%,
+                var(--primary) 100%);
+            color: white;
+            padding: 150px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gradient-gold);
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 80px;
+            margin-bottom: 100px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .footer-section h3 {
+            color: var(--gold);
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+            position: relative;
+            padding-bottom: 20px;
+            font-weight: 800;
+        }
+        
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+        
+        .student-info {
+            font-size: 1.3rem;
+            line-height: 1.8;
+        }
+        
+        .info-item-footer {
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 15px 25px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            transition: var(--transition-smooth);
+            border: 1px solid transparent;
+        }
+        
+        .info-item-footer:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 215, 0, 0.3);
+            transform: translateX(10px);
+        }
+        
+        .info-item-footer i {
+            color: var(--gold);
+            font-size: 1.5rem;
+            min-width: 30px;
+            text-align: center;
+        }
+        
+        .social-showcase {
+            display: flex;
+            gap: 25px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .social-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+            transition: var(--transition-bounce);
+            text-decoration: none;
+            border: 2px solid transparent;
+        }
+        
+        .social-icon:hover {
+            background: var(--gradient-gold);
+            color: var(--dark);
+            transform: translateY(-15px) rotate(360deg) scale(1.2);
+            border-color: white;
+            box-shadow: 
+                0 15px 35px rgba(0, 0, 0, 0.3),
+                0 0 30px rgba(255, 215, 0, 0.5);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 80px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.2rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .heart-beat {
+            color: var(--accent);
+            font-size: 2rem;
+            animation: heartbeat 1.5s infinite;
+            display: inline-block;
+            margin: 0 10px;
+        }
+        
+        /* ====== RESPONSIVE DESIGN ====== */
+        @media (max-width: 1400px) {
+            .section-title {
+                font-size: 3.5rem;
+            }
+            
+            .hero-title {
+                font-size: 4.5rem;
+            }
+            
+            .teacher-name {
+                font-size: 4rem;
+            }
+        }
+        
+        @media (max-width: 1200px) {
+            .section {
+                padding: 120px 0;
+            }
+            
+            .section-title {
+                font-size: 3rem;
+                margin-bottom: 80px;
+            }
+            
+            .hero-title {
+                font-size: 4rem;
+            }
+            
+            .nav-menu {
+                gap: 30px;
+            }
+            
+            .qualities-showcase,
+            .memories-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .section {
+                padding: 100px 0;
+            }
+            
+            .section-title {
+                font-size: 2.8rem;
+            }
+            
+            .hero-title {
+                font-size: 3.5rem;
+            }
+            
+            .teacher-name {
+                font-size: 3.5rem;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                flex-direction: column;
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(30px);
+                width: 320px;
+                height: 100vh;
+                padding: 120px 50px;
+                transition: var(--transition-smooth);
+                box-shadow: -10px 0 50px rgba(0, 0, 0, 0.15);
+                border-left: 1px solid rgba(255, 215, 0, 0.3);
+            }
+            
+            .nav-menu.active {
+                right: 0;
+            }
+            
+            .nav-menu li {
+                margin: 25px 0;
+            }
+            
+            .hamburger {
+                display: flex;
+            }
+            
+            .hamburger.active span:nth-child(1) {
+                transform: rotate(45deg) translate(9px, 9px);
+                background: var(--accent);
+            }
+            
+            .hamburger.active span:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .hamburger.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(9px, -9px);
+                background: var(--accent);
+            }
+            
+            .qualities-showcase,
+            .memories-grid,
+            .quiz-options {
+                grid-template-columns: 1fr;
+            }
+            
+            .message-card,
+            .quiz-container {
+                padding: 60px 40px;
+            }
+            
+            .portrait-body {
+                padding: 60px 40px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .section {
+                padding: 80px 0;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+                margin-bottom: 60px;
+            }
+            
+            .hero-title {
+                font-size: 3rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.8rem;
+            }
+            
+            .teacher-name {
+                font-size: 3rem;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+                gap: 25px;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 400px;
+                justify-content: center;
+                padding: 20px 40px;
+            }
+            
+            .student-card {
+                padding: 40px 30px;
+            }
+            
+            .info-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .message-body {
+                padding: 40px 30px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.6rem;
+            }
+            
+            .teacher-name {
+                font-size: 2.5rem;
+            }
+            
+            .teacher-quote {
+                font-size: 2rem;
+            }
+            
+            .message-title,
+            .quiz-title {
+                font-size: 2.8rem;
+            }
+            
+            .portrait-header {
+                padding: 60px 30px;
+            }
+            
+            .portrait-body {
+                padding: 40px 20px;
+            }
+            
+            .quality-item,
+            .memory-card,
+            .quiz-option {
+                padding: 30px 20px;
+            }
+            
+            .message-card {
+                padding: 40px 20px;
+            }
+        }
+        
+        /* ====== PRINT STYLES ====== */
+        @media print {
+            .navbar,
+            .hero-btns,
+            .quiz-options,
+            .social-showcase,
+            .hamburger {
+                display: none !important;
+            }
+            
+            body {
+                background: white !important;
+                color: black !important;
+            }
+            
+            .section {
+                padding: 50px 0 !important;
+                page-break-inside: avoid;
+            }
+            
+            .hero {
+                background: white !important;
+                color: black !important;
+                min-height: auto;
+                margin-top: 0;
+            }
+            
+            .hero-title {
+                background: black !important;
+                -webkit-background-clip: text !important;
+                -webkit-text-fill-color: black !important;
+                background-clip: text !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Emotional Preloader -->
+    <div id="preloader">
+        <div class="loader-content">
+            <div class="loader-heart">
+                <i class="fas fa-heart"></i>
+            </div>
+            <h2 class="loader-text">Creating Something Special...</h2>
+            <p style="margin-top: 20px; font-size: 1.2rem; opacity: 0.8;">
+                For The World's Best Teacher - Mam Muqadas
+            </p>
+            <div class="progress-ring">
+                <svg viewBox="0 0 100 100">
+                    <circle class="progress-ring__circle" 
+                            cx="50" cy="50" r="50" 
+                            stroke-dasharray="314" 
+                            stroke-dashoffset="314">
+                    </circle>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Hearts -->
+    <div class="floating-hearts" id="floatingHearts"></div>
+
+    <!-- Glass Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#home" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <div class="logo-text">GRADUATION 2025</div>
+            </a>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="active"><i class="fas fa-home"></i> HOME</a></li>
+                <li><a href="#teacher"><i class="fas fa-chalkboard-teacher"></i> MAM MUQADAS</a></li>
+                <li><a href="#memories"><i class="fas fa-star"></i> MEMORIES</a></li>
+                <li><a href="#message"><i class="fas fa-heart"></i> MESSAGE</a></li>
+                <li><a href="#quiz"><i class="fas fa-gamepad"></i> QUIZ</a></li>
+            </ul>
+            
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero section">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-gift"></i> A GRADUATION GIFT FROM THE HEART
+                </div>
+                
+                <h1 class="hero-title">
+                    To The Teacher<br>
+                    Who Changed<br>
+                    <span style="display: inline-block; animation: titleWave 3s infinite;">My World</span>
+                </h1>
+                
+                <p class="hero-subtitle">
+                    "Some teachers teach subjects, but rare ones teach life"
+                </p>
+                
+                <div class="student-card">
+                    <h2 style="text-align: center; margin-bottom: 50px; font-size: 2.5rem; color: white;">
+                        <i class="fas fa-user-graduate"></i> My Journey & Achievement
+                    </h2>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <i class="fas fa-user"></i>
+                            <h3>STUDENT NAME</h3>
+                            <p><strong>SABA AKRAM</strong></p>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-laptop-code"></i>
+                            <h3>DEPARTMENT</h3>
+                            <p><strong>BS INFORMATION TECHNOLOGY</strong></p>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-calendar-star"></i>
+                            <h3>SESSION</h3>
+                            <p><strong>2021 - 2025</strong></p>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-award"></i>
+                            <h3>GRADUATION</h3>
+                            <p><strong>CLASS OF 2025</strong></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero-btns">
+                    <a href="#message" class="btn btn-primary">
+                        <i class="fas fa-heart"></i> READ MY HEARTFELT MESSAGE
+                    </a>
+                    <a href="#quiz" class="btn btn-secondary">
+                        <i class="fas fa-play-circle"></i> TRY THE MEMORY QUIZ
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Teacher Portrait -->
+    <section id="teacher" class="section teacher-section">
+        <div class="container">
+            <h2 class="section-title">MAM MUQADAS</h2>
+            <p class="section-subtitle">
+                "A teacher affects eternity; she can never tell where her influence stops"
+            </p>
+            
+            <div class="teacher-portrait">
+                <div class="portrait-card">
+                    <div class="portrait-header">
+                        <h1 class="teacher-name">MAM MUQADAS</h1>
+                        <p class="teacher-title">Department of Information Technology</p>
+                        <p class="teacher-quote">
+                            "Teaching is not a profession, it's a passion"
+                        </p>
+                    </div>
+                    
+                    <div class="portrait-body">
+                        <p class="teacher-description">
+                            Beyond being an exceptional educator, Mam Muqadas has been the guiding light in my academic journey. Her unique blend of technical expertise and heartfelt mentorship created an environment where every student felt valued, understood, and inspired to achieve greatness. She didn't just teach subjects; she taught us how to think, how to persevere, and how to transform challenges into opportunities.
+                        </p>
+                        
+                        <div class="qualities-showcase">
+                            <div class="quality-item">
+                                <div class="quality-icon">
+                                    <i class="fas fa-lightbulb"></i>
+                                </div>
+                                <h3>INNOVATIVE TEACHING</h3>
+                                <p>Transformed complex concepts into engaging learning experiences</p>
+                            </div>
+                            
+                            <div class="quality-item">
+                                <div class="quality-icon">
+                                    <i class="fas fa-heart"></i>
+                                </div>
+                                <h3>COMPASSIONATE MENTOR</h3>
+                                <p>Cared for students beyond academics, nurturing personal growth</p>
+                            </div>
+                            
+                            <div class="quality-item">
+                                <div class="quality-icon">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+                                <h3>ACADEMIC EXCELLENCE</h3>
+                                <p>Dedicated to delivering world-class education with passion</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emotional Memories -->
+    <section id="memories" class="section memories-section">
+        <div class="container">
+            <h2 class="section-title">CHERISHED MEMORIES</h2>
+            <p class="section-subtitle">
+                "The moments that shaped my journey and will stay with me forever"
+            </p>
+            
+            <div class="memories-grid">
+                <div class="memory-card">
+                    <div class="memory-visual">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <div class="memory-content">
+                        <h3>THE FIRST LECTURE</h3>
+                        <p>When you walked into the classroom and transformed programming from a subject into a passion. Your energy was contagious.</p>
+                    </div>
+                </div>
+                
+                <div class="memory-card">
+                    <div class="memory-visual">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <div class="memory-content">
+                        <h3>"AHA!" MOMENTS</h3>
+                        <p>Those breakthrough moments when complex concepts suddenly clicked because of your patient explanations.</p>
+                    </div>
+                </div>
+                
+                <div class="memory-card">
+                    <div class="memory-visual">
+                        <i class="fas fa-laugh-beam"></i>
+                    </div>
+                    <div class="memory-content">
+                        <h3>CLASSROOM LAUGHTER</h3>
+                        <p>Your witty examples and humorous anecdotes that made even database management enjoyable.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Heartfelt Message -->
+    <section id="message" class="section message-section">
+        <div class="container">
+            <div class="message-container">
+                <div class="message-card">
+                    <div class="message-header">
+                        <h1 class="message-title">TO MY DEAREST MAM MUQADAS</h1>
+                        <p class="message-subtitle">From Saba Akram - BS IT 2021-2025</p>
+                    </div>
+                    
+                    <div class="message-body">
+                        <p>As I stand at the threshold of graduation, my heart is filled with emotions that words can hardly express. This journey that began four years ago has been transformative, and at the center of this transformation stands you - my guide, my mentor, my inspiration.</p>
+                        
+                        <p>I remember my first class with you - nervous, unsure, and overwhelmed by the complexity of programming. But with your first smile and those encouraging words, "Don't worry, we'll learn this together," you turned my anxiety into anticipation. You didn't just teach code; you taught us how to think like programmers, how to solve problems, how to be resilient when things didn't work, and how to celebrate when they did.</p>
+                        
+                        <p>Your classroom was never just a physical space; it was a sanctuary of learning where mistakes were welcomed as opportunities to grow, where questions were encouraged as signs of curiosity, and where every student felt seen and valued. You had this incredible ability to look at a confused face and know exactly what part needed clarification.</p>
+                        
+                        <p>What I admire most about you is not just your vast knowledge of information technology, but your profound understanding of human potential. You saw in me capabilities I didn't know I possessed. You pushed me when I needed pushing, supported me when I needed support, and believed in me even when I doubted myself.</p>
+                        
+                        <p>The lessons you taught me extend far beyond textbooks and syllabi. You taught me perseverance when debugging seemed impossible. You taught me attention to detail when writing requirements. You taught me teamwork during project collaborations. You taught me professionalism that will guide my career. These are not just academic lessons; these are life lessons.</p>
+                        
+                        <p>As I receive my degree, I know this achievement is as much yours as it is mine. Every line of code I write, every problem I solve, every project I complete - they all bear the imprint of your teachings. You have given me more than an education; you have given me a foundation for life.</p>
+                        
+                        <p>This website is a small token of my immense gratitude. While digital code can never fully capture the depth of my appreciation, I hope it serves as a reminder that your impact extends far beyond classroom walls. You have shaped not just a student, but a future professional, and more importantly, a better human being.</p>
+                        
+                        <p>Thank you for being the teacher every student dreams of having. Thank you for your patience, your wisdom, your kindness, and your unwavering belief in your students. Thank you for being my guiding star.</p>
+                        
+                        <p>As I step into the world, I carry your teachings with me. I will make you proud. I will apply everything you taught me. And whenever I achieve something meaningful, I will remember that it began in your classroom.</p>
+                    </div>
+                    
+                    <div class="message-signature">
+                        <div class="signature-name">Saba Akram</div>
+                        <div class="signature-details">
+                            BS Information Technology | Session 2021-2025 | Graduation 2025
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Quiz -->
+    <section id="quiz" class="section quiz-section">
+        <div class="container">
+            <h2 class="section-title">MEMORY LANE QUIZ</h2>
+            <p class="section-subtitle">
+                "Let's revisit those special classroom moments"
+            </p>
+            
+            <div class="quiz-container">
+                <div class="quiz-header">
+                    <h3 class="quiz-title">
+                        <i class="fas fa-gamepad"></i> CLASSROOM CHRONICLES
+                    </h3>
+                    <p style="color: #666; font-size: 1.3rem; margin-top: 20px;">
+                        How well do you remember our special moments with Mam Muqadas?
+                    </p>
+                </div>
+                
+                <div class="quiz-question">
+                    What was Mam Muqadas's signature phrase when starting a new topic?
+                </div>
+                
+                <div class="quiz-options">
+                    <div class="quiz-option" data-correct="true">
+                        "Let's embark on this learning adventure together!"
+                    </div>
+                    <div class="quiz-option">
+                        "Open your books to chapter five"
+                    </div>
+                    <div class="quiz-option">
+                        "This will be on your exam"
+                    </div>
+                    <div class="quiz-option">
+                        "Pay close attention now"
+                    </div>
+                </div>
+                
+                <div class="quiz-question" style="margin-top: 60px;">
+                    How did she respond to students who were struggling?
+                </div>
+                
+                <div class="quiz-options">
+                    <div class="quiz-option">
+                        "You should have studied more"
+                    </div>
+                    <div class="quiz-option" data-correct="true">
+                        "Let me show you another way to understand this"
+                    </div>
+                    <div class="quiz-option">
+                        "Ask your classmates for help"
+                    </div>
+                    <div class="quiz-option">
+                        "We'll come back to it later"
+                    </div>
+                </div>
+                
+                <button class="btn btn-primary" id="submitQuiz" style="margin: 80px auto 0; display: block; background: var(--gradient-emotional);">
+                    <i class="fas fa-check-circle"></i> CHECK MY MEMORIES
+                </button>
+                
+                <div class="quiz-result" id="quizResult">
+                    <i class="fas fa-trophy" style="font-size: 4rem; margin-bottom: 30px;"></i>
+                    <h3 style="font-size: 3rem; margin-bottom: 20px;">PERFECT MEMORY! 🎉</h3>
+                    <p style="font-size: 1.6rem; margin-bottom: 20px;">
+                        You remember exactly why Mam Muqadas was so special!<br>
+                        Her patience, creativity, and dedication made all the difference.
+                    </p>
+                    <p style="font-size: 1.4rem; opacity: 0.9;">
+                        She wasn't just teaching subjects - she was shaping futures.<br>
+                        And we were lucky to be her students.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emotional Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>GRADUATION DETAILS</h3>
+                    <div class="student-info">
+                        <div class="info-item-footer">
+                            <i class="fas fa-user-graduate"></i>
+                            <div>
+                                <strong>Student:</strong><br>
+                                Saba Akram
+                            </div>
+                        </div>
+                        <div class="info-item-footer">
+                            <i class="fas fa-university"></i>
+                            <div>
+                                <strong>Program:</strong><br>
+                                BS Information Technology
+                            </div>
+                        </div>
+                        <div class="info-item-footer">
+                            <i class="fas fa-calendar-alt"></i>
+                            <div>
+                                <strong>Session:</strong><br>
+                                2021 - 2025
+                            </div>
+                        </div>
+                        <div class="info-item-footer">
+                            <i class="fas fa-award"></i>
+                            <div>
+                                <strong>Graduation:</strong><br>
+                                Class of 2025
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>TO MAM MUQADAS</h3>
+                    <p style="font-size: 1.3rem; line-height: 1.8; margin-bottom: 30px;">
+                        Department of Information Technology<br>
+                        The teacher who made all the difference<br>
+                        Forever grateful for your guidance
+                    </p>
+                    <p style="font-size: 1.2rem; line-height: 1.8; opacity: 0.9; font-style: italic;">
+                        "A great teacher takes a hand, opens a mind, and touches a heart."
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>SHARE THIS TRIBUTE</h3>
+                    <p style="font-size: 1.3rem; line-height: 1.8; margin-bottom: 40px;">
+                        Share this digital tribute with other teachers and students.<br>
+                        Let's celebrate the educators who shape our world.
+                    </p>
+                    <div class="social-showcase">
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p style="margin-bottom: 20px; font-size: 1.4rem;">
+                    © 2025 GRADUATION TRIBUTE WEBSITE | 
+                    CREATED WITH <span class="heart-beat">❤️</span> BY SABA AKRAM
+                </p>
+                <p style="font-size: 1.2rem; margin-bottom: 15px;">
+                    This website is a heartfelt tribute to my teacher Mam Muqadas
+                </p>
+                <p style="font-size: 1.1rem; opacity: 0.7;">
+                    "The influence of a great teacher can never be erased"
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ====== ULTIMATE JAVASCRIPT ======
+        
+        // DOM Elements
+        const preloader = document.getElementById('preloader');
+        const navbar = document.getElementById('navbar');
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+        const floatingHearts = document.getElementById('floatingHearts');
+        const submitQuizBtn = document.getElementById('submitQuiz');
+        const quizResult = document.getElementById('quizResult');
+        const quizOptions = document.querySelectorAll('.quiz-option');
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            // Preloader with progress animation
+            setTimeout(() => {
+                preloader.style.opacity = '0';
+                setTimeout(() => {
+                    preloader.style.display = 'none';
+                    
+                    // Create floating hearts
+                    createFloatingHearts();
+                    
+                    // Start continuous heart animation
+                    setInterval(createFloatingHearts, 3000);
+                }, 800);
+            }, 3000);
+            
+            // Add scroll animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -150px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                        entry.target.style.filter = 'blur(0)';
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe all animated elements
+            document.querySelectorAll('.quality-item, .memory-card, .quiz-option').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(50px)';
+                el.style.filter = 'blur(10px)';
+                el.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+                observer.observe(el);
+            });
+            
+            // Create title wave effect
+            const waveText = document.querySelector('.title-wave');
+            if (waveText) {
+                setInterval(() => {
+                    waveText.style.transform = 'translateY(-10px)';
+                    setTimeout(() => {
+                        waveText.style.transform = 'translateY(0)';
+                    }, 300);
+                }, 3000);
+            }
+        });
+        
+        // Create floating hearts
+        function createFloatingHearts() {
+            const heartCount = 15;
+            
+            for (let i = 0; i < heartCount; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'heart-float';
+                heart.innerHTML = '<i class="fas fa-heart"></i>';
+                
+                // Random properties
+                const left = Math.random() * 100;
+                const delay = Math.random() * 15;
+                const duration = 10 + Math.random() * 10;
+                const size = 1 + Math.random() * 2;
+                const opacity = 0.2 + Math.random() * 0.3;
+                
+                heart.style.left = `${left}%`;
+                heart.style.animationDelay = `${delay}s`;
+                heart.style.animationDuration = `${duration}s`;
+                heart.style.fontSize = `${size}rem`;
+                heart.style.opacity = opacity;
+                
+                floatingHearts.appendChild(heart);
+                
+                // Remove after animation
+                setTimeout(() => {
+                    if (heart.parentNode) {
+                        heart.parentNode.removeChild(heart);
+                    }
+                }, (duration + delay) * 1000);
+            }
+        }
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+            
+            // Update active nav link
+            updateActiveNavLink();
+        });
+        
+        // Update active nav link
+        function updateActiveNavLink() {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-menu a');
+            
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 200;
+                const sectionHeight = section.clientHeight;
+                
+                if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+        
+        // Mobile menu toggle
+        hamburger.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!navMenu.contains(event.target) && !hamburger.contains(event.target)) {
+                navMenu.classList.remove('active');
+                hamburger.classList.remove('active');
+            }
+        });
+        
+        // Quiz functionality
+        let selectedOptions = [];
+        
+        quizOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                // Toggle selection
+                this.classList.toggle('selected');
+                
+                if (this.classList.contains('selected')) {
+                    selectedOptions.push(this);
+                    
+                    // Add selection effect
+                    this.style.animation = 'none';
+                    setTimeout(() => {
+                        this.style.animation = 'pulse 0.5s';
+                    }, 10);
+                } else {
+                    selectedOptions = selectedOptions.filter(opt => opt !== this);
+                }
+            });
+        });
+        
+        submitQuizBtn.addEventListener('click', function() {
+            const correctOptions = document.querySelectorAll('.quiz-option[data-correct="true"]');
+            const selectedCorrect = selectedOptions.filter(opt => opt.dataset.correct === "true").length;
+            
+            if (selectedOptions.length === 0) {
+                showEmotionalNotification('Please select some answers first!', 'info');
+                return;
+            }
+            
+            // Show result with emotional message
+            quizResult.classList.add('show');
+            
+            // Emotional celebration
+            createEmotionalCelebration();
+            
+            // Scroll to result
+            quizResult.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            
+            // Change button text
+            this.innerHTML = '<i class="fas fa-redo"></i> TRY AGAIN';
+            this.onclick = function() {
+                location.reload();
+            };
+        });
+        
+        // Create emotional celebration
+        function createEmotionalCelebration() {
+            // Emotional confetti
+            const emotions = ['❤️', '🎓', '🌟', '✨', '🥳', '🎉', '💫', '👏', '🙏', '💖'];
+            
+            for (let i = 0; i < 150; i++) {
+                const emotion = document.createElement('div');
+                emotion.style.cssText = `
+                    position: fixed;
+                    font-size: ${2 + Math.random() * 3}rem;
+                    top: -50px;
+                    left: ${Math.random() * 100}vw;
+                    z-index: 10000;
+                    pointer-events: none;
+                    opacity: 0;
+                    text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+                `;
+                emotion.textContent = emotions[Math.floor(Math.random() * emotions.length)];
+                
+                // Animation
+                const animation = emotion.animate([
+                    { 
+                        transform: `translateY(0) rotate(0deg) scale(0)`, 
+                        opacity: 0 
+                    },
+                    { 
+                        transform: `translateY(20vh) rotate(180deg) scale(1)`, 
+                        opacity: 1 
+                    },
+                    { 
+                        transform: `translateY(${window.innerHeight + 100}px) rotate(360deg) scale(0)`, 
+                        opacity: 0 
+                    }
+                ], {
+                    duration: 2000 + Math.random() * 2000,
+                    easing: 'cubic-bezier(0.1, 0.8, 0.9, 0.1)',
+                    delay: Math.random() * 1000
+                });
+                
+                document.body.appendChild(emotion);
+                
+                // Remove after animation
+                animation.onfinish = () => {
+                    if (emotion.parentNode) {
+                        emotion.parentNode.removeChild(emotion);
+                    }
+                };
+            }
+            
+            // Heartbeat effect
+            document.body.style.animation = 'heartbeat 1s 3';
+            setTimeout(() => {
+                document.body.style.animation = '';
+            }, 3000);
+            
+            // Show emotional notification
+            showEmotionalNotification('Thank you for remembering! Mam Muqadas was truly special!', 'success');
+        }
+        
+        // Show emotional notification
+        function showEmotionalNotification(message, type) {
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 150px;
+                right: 30px;
+                background: ${type === 'success' ? 'var(--gradient-emotional)' : 'var(--gradient-blue)'};
+                color: white;
+                padding: 25px 40px;
+                border-radius: 20px;
+                box-shadow: 
+                    0 20px 60px rgba(0, 0, 0, 0.3),
+                    0 0 30px rgba(255, 255, 255, 0.2);
+                z-index: 10000;
+                font-size: 1.2rem;
+                font-weight: 600;
+                transform: translateX(100%);
+                opacity: 0;
+                transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+                border: 2px solid rgba(255, 255, 255, 0.3);
+                backdrop-filter: blur(20px);
+                max-width: 400px;
+                text-align: center;
+            `;
+            
+            notification.innerHTML = `
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <i class="fas fa-heart" style="font-size: 1.8rem;"></i>
+                    <span>${message}</span>
+                </div>
+            `;
+            
+            document.body.appendChild(notification);
+            
+            // Animate in
+            setTimeout(() => {
+                notification.style.transform = 'translateX(0)';
+                notification.style.opacity = '1';
+            }, 10);
+            
+            // Remove after 5 seconds
+            setTimeout(() => {
+                notification.style.transform = 'translateX(100%)';
+                notification.style.opacity = '0';
+                setTimeout(() => {
+                    if (notification.parentNode) {
+                        notification.parentNode.removeChild(notification);
+                    }
+                }, 600);
+            }, 5000);
+        }
+        
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 120,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu
+                    navMenu.classList.remove('active');
+                    hamburger.classList.remove('active');
+                }
+            });
+        });
+        
+        // Add current year to footer
+        document.addEventListener('DOMContentLoaded', function() {
+            const yearElement = document.querySelector('.copyright p');
+            if (yearElement) {
+                yearElement.innerHTML = yearElement.innerHTML.replace('2025', new Date().getFullYear());
+            }
+        });
+        
+        // Keyboard shortcuts
+        document.addEventListener('keydown', function(e) {
+            // Space - Celebration
+            if (e.code === 'Space' && !e.target.matches('input, textarea, button')) {
+                e.preventDefault();
+                createEmotionalCelebration();
+            }
+            
+            // Escape - Close menus
+            if (e.code === 'Escape') {
+                navMenu.classList.remove('active');
+                hamburger.classList.remove('active');
+            }
+            
+            // H - Show hearts
+            if (e.code === 'KeyH' && !e.target.matches('input, textarea')) {
+                createFloatingHearts();
+            }
+        });
+        
+        // Add ripple effect to buttons
+        document.addEventListener('click', function(e) {
+            if (e.target.closest('.btn') || e.target.closest('.quiz-option')) {
+                const button = e.target.closest('.btn') || e.target.closest('.quiz-option');
+                const ripple = document.createElement('span');
+                const rect = button.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+                
+                ripple.style.cssText = `
+                    position: absolute;
+                    border-radius: 50%;
+                    background: rgba(255, 255, 255, 0.7);
+                    transform: scale(0);
+                    animation: ripple 0.6s linear;
+                    width: ${size}px;
+                    height: ${size}px;
+                    top: ${y}px;
+                    left: ${x}px;
+                    pointer-events: none;
+                `;
+                
+                button.style.position = 'relative';
+                button.style.overflow = 'hidden';
+                button.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            }
+        });
+        
+        // Add ripple animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
